@@ -49,7 +49,7 @@ router.post('/login',async function (ctx, next) {
       loginbean.nicheng=rs.nicheng;
       loginbean.role=rs.role;
       ctx.session.loginbean=loginbean;
-      console.log(ctx.session.loginbean);
+      // console.log(""ctx.session.loginbean);
       ctx.body=1;
     }else{
       ctx.body=0;

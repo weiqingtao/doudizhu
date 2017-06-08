@@ -28,6 +28,7 @@
     "koa-generic-session": "^1.11.5",
     "mongodb": "^2.2.28",
     "mongoose": "^4.10.4",
-    "nodemon": "^1.8.1"
+    "nodemon": "^1.8.1",
+    "redis": "^2.7.1"
   }
 }

@@ -1,3 +1,5 @@
 <template>
-    <div></div>
+    <div>
+    	等级
+    </div>
 </template>
