@@ -27,7 +27,7 @@ module.exports = {
     autoOpenBrowser: true,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-       proxyTable: {
+    proxyTable: {
         '/api': {
              target: 'http://localhost:3000',
              changeOrigin: true,
@@ -42,5 +42,6 @@ module.exports = {
     // In our experience, they generally work as expected,
     // just be aware of this issue when enabling this option.
     cssSourceMap: false
-  }
+  },
+
 }

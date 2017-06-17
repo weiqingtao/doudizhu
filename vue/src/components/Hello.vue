@@ -1,31 +1,61 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://gitter.im/vuejs/vue" target="_blank">Gitter Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-      <br>
-      <li><a href="http://vuejs-templates.github.io/webpack/" target="_blank">Docs for This Template</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
+    第{{data}}页<br/>
+    {{ msg.split('').join(',') }}<br/>
+    {{ number+1 }}<br/>
+    <span>{{ok ? 'YES' : 'NO'}}</span><br/>
+
+     <div v-if="show">进入if</div> 
+    <div v-else>进入else</div> 
+
+    <br/><input type='button' value='change1' @click='dian(1)'/>
+    <input type='button' value='change2' @click='dian(2)'/>
+    <input type='button' value='change3' @click='dian(3)'/>
+    <div v-if="ii==1">第一页</div>
+    <div v-if="ii==2">第二页</div>
+    <div v-if="ii==3">第三页</div>
+    <table border='1'>
+      <template v-for="(item,index) in items">
+      <tr v-if='index%2==0'><td>{{item.a}}</td><td v-html="item.b"></td></tr>
+      </template>
+    </table>
   </div>
+  
 </template>
 
 <script>
 export default {
-  name: 'hello',
+  created:function(){ 
+       
+  }, 
+  mounted:function(){ 
+       
+  },
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: '<font size="7">hello</font>',
+      number:10,
+      url:'http://www.sina.com.cn',
+      cc:'color:red',
+      aa:'aa',
+      ok:true,
+      show:false,
+      ii:1,
+      items:[
+        {a:'aaaaaaaaaaaa',b:'<font size="7">bbbbb</font>'},
+        {a:'tttttttt',b:'<font size="7">tttttt</font>'},
+        {a:'rrrrrr',b:'<font size="7">eeeeee</font>'}
+      ]
+    }
+  },
+  methods:{
+    dian:function(data){
+      this.ii=data;
+    }
+  },
+  computed:{
+    data:function(){
+      return this.ii;
     }
   }
 }
@@ -33,21 +63,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
+.aa{
+  border:1px solid blue;
 }
 </style>

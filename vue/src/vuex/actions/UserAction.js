@@ -14,9 +14,10 @@ export function zhuce(form,thisa){
 		});
 };
 
-export function login(form,thisa){  //将数据提交到koa2
+export function login(form,thisa){
 		axPost('/api/users/login',$(form).serialize(),function(res){
-				if(res.data==1){
+				if(res.data!=0){
+					userStore.commit('login',res.data);
 					thisa.$router.push('/gamehill');
 					return;
 				}else{

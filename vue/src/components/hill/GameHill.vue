@@ -1,13 +1,13 @@
 <template>
 	<el-row style="margin-bottom: 18px">
-			<el-col :span='1'>&nbsp;</el-col>
-			<el-col :span='4'>
+			<el-col :span='3'>&nbsp;</el-col>
+			<el-col :span='3'>
 				<levelnav/>
 			</el-col>
-			<el-col :span='18'>
+			<el-col :span='15'>
 				<roomlist/>
 			</el-col>
-			<el-col :span='1'>&nbsp;</el-col>
+			<el-col :span='3'>&nbsp;</el-col>
 	</el-row>
 		
 		

@@ -4,9 +4,8 @@ import Hello from '@/components/Hello'
 import GameStart from '@/components/GameStart'
 import Register from '@/components/user/Register'
 import GameHill from '@/components/hill/GameHill'
-import RoomHead from '@/components/room/RoomHead'
-import ReadReady from '@/components/room/RoomHead'
 import Room from '@/components/room/Room'
+
 Vue.use(Router)
 
 export default new Router({
@@ -25,7 +24,7 @@ export default new Router({
       path:'/gamehill',
       name:'gamehill',
       component:GameHill
-    }, 
+    },
     {
       path:'/room',
       name:'room',

@@ -1,5 +1,5 @@
 <template>
-    <div>
-    	等级
-    </div>
+	<div>
+		级别导航
+	</div>
 </template>

@@ -14,13 +14,11 @@
 				  </el-form-item>
 		</el-form>
 		<br/>
-			<el-table
-		    :data="roomList"
-		    border
-		    style="width: 100%">
+		<el-table :data="roomList">
 		    <el-table-column
+		      fixed
 		      prop="room"
-		      label="房间号">
+		      label="房号">
 		    </el-table-column>
 		    <el-table-column
 		      prop="num"
@@ -35,24 +33,22 @@
 		      label="创建时间">
 		    </el-table-column>
 		    <el-table-column
+		      fixed="right"
 		      label="操作">
 		      <template scope="scope">
-		      <router-link to="/room">
 		        <el-button
 		          type="text"
-		          size="small" >
+		          size="small" @click='enterRoom(roomList[scope.$index].room)'>
 		          进入
 		        </el-button>
-		        </router-link>
 		      </template>
 		    </el-table-column>
 		  </el-table>
 
-
 	</div>
 </template>
 <script>
-import {newRoom,getRoomList} from '../../vuex/actions/HallAction'
+import {newRoom,getRoomList,enterRoom} from '../../vuex/actions/HallAction'
 let newVue =  {
   data(){
   	return {
@@ -74,12 +70,11 @@ let newVue =  {
   		let formObj='roompwd='+newRoomForm.roompwd.value;
   		newRoom(formObj,this);
   	},
-  	  
+  	enterRoom:function(room){
+  		//alert(room);
+  		enterRoom(room,this);
+  	}
   }
 }
 export default newVue;
 </script>
-
-
-
-
